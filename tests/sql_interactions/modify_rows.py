@@ -49,15 +49,11 @@ for i in tables[0]:
 
 
 def modify_rows():
-    """
-    It takes the user's input, and uses it to modify the selected row in the database
-    """
     try:
         sqlite_connection = sqlite3.connect(filePath)
         cursor = sqlite_connection.cursor()
 
-        # Asking the user to input a number, and then it is assigning a value to the variable selectedOption
-        # based on the number the user inputs.
+
         select_option = input(optionMenu)
         for n in select_option:
             if n == '1':
@@ -72,7 +68,6 @@ def modify_rows():
                 print(f"Invalid option")
                 break
 
-        # Asking the user to input the ID of the row he wants to modify.
         for v in selected_option:
             if v is not None:
                 id_input = int(input("Which ID you want to modify?: "))
@@ -80,7 +75,6 @@ def modify_rows():
             else:
                 break
 
-        # Asking the user to input the new values for the selected column.
         for v in selected_option:
             if v is not None:
                 value_input = input('Type the new value: ')

@@ -40,9 +40,6 @@ for i in tables[0]:
 
 
 def insert_multiple_records():
-    """
-    It takes the values from the user and inserts them into the database.
-    """
     try:
         sqlite_connection = sqlite3.connect(filePath)
         cursor = sqlite_connection.cursor()
